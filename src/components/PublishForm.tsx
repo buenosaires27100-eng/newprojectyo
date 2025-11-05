@@ -46,6 +46,7 @@ export function PublishForm({ accessToken, onClose, onPublished }: PublishFormPr
       setDescription('');
       setQuartier('');
       setError(null);
+      setLoading(false);
     }
   };
 
@@ -100,7 +101,7 @@ export function PublishForm({ accessToken, onClose, onPublished }: PublishFormPr
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b">
           {step === 2 ? (
-            <button onClick={handleBack} className="p-2 hover:bg-gray-100 rounded-full">
+            <button onClick={handleBack} className="p-2 hover:bg-gray-100 rounded-full" aria-label="Back">
               <ChevronLeft className="w-5 h-5" />
             </button>
           ) : (
