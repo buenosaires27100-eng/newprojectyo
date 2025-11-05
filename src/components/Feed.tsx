@@ -74,13 +74,6 @@ export function Feed({ accessToken, currentUserId, onStartConversation }: FeedPr
 
   React.useEffect(() => {
     fetchAnnouncements();
-    
-    // Refresh every 10 seconds
-    const interval = setInterval(() => {
-      fetchAnnouncements(false);
-    }, 10000);
-
-    return () => clearInterval(interval);
   }, []);
 
   const filteredAnnouncements = announcements.filter((a) => {
